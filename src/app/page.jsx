@@ -2,7 +2,7 @@
 
 import Player from "@madzadev/audio-player";
 import "@madzadev/audio-player/dist/index.css";
-import { BackgroundLines } from "@/components/backgroud-lines";
+import Image from "next/image";
 
 export default function page() {
   const tracks = [
@@ -11,15 +11,18 @@ export default function page() {
       title: "Darmawan - Diah Hendrayani",
       tags: ["house"],
     },
-    {
-      url: "/music/kekasihku.mp3",
-      title: "Darmawan - Kekasihku",
-      tags: ["house"],
-    },
   ];
   return (
     <main className="min-h-screen bg-white text-white flex items-end justify-center">
-      <section className="container max-w-3xl rounded-se-3xl p-4 z-10 absolute transform scale-50">
+      <Image
+        src="/images/bgr.png"
+        alt="Diah Hendrayani"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        className="z-0"
+      />
+      <section className="container max-w-3xl rounded-se-3xl p-4 z-10 absolute transform scale-70">
         <Player
           trackList={tracks}
           includeTags={false}
